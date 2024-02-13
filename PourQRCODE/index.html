@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoodMusic</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #571e80, #d9c5ed);
+    color: white;
+    text-align: center;
+  }
+  h1 {
+    margin-top: 50px;
+    font-size: 3em;
+    font-family: 'Helvetica';
+  }
+  .mood-button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .concentre { background-color: #5E548E; }
+  .heureux { background-color: #9F86C0; }
+  .festif { background-color: #BE95C4; }
+  .triste { background-color: #E0B1CB; }
+  .mood-button:hover {
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+
+<h1>MoodMusic®</h1>
+
+<button class="mood-button concentre" onclick="window.location.href='#';">🧘 Concentré</button>
+<button class="mood-button heureux" onclick="window.location.href='/Users/macbook/Desktop/L3-INFO/S2/CMS/PourQRCODE/heureux.html';">😊 Heureux</button>
+<button class="mood-button festif" onclick="window.location.href='#';">🎉 Festif</button>
+<button class="mood-button triste" onclick="window.location.href='#';">😢 Triste</button>
+
+
+</body>
+</html>
