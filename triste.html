@@ -59,11 +59,42 @@
             color: white;
             text-align: center;
         }
+        .conteneur-boutons {
+            position: fixed; 
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+        .mood-button {
+            margin: 10px;
+            padding: 5px 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .concentre { background-color: #5E548E; }
+        .festif { background-color: #BE95C4; }
+        .heureux { background-color: #9F86C0; }
+        .menu {background-color: white}
+
+        .mood-button:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
+<button class = "mood-button menu" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/index.html';">Menu Principal</button>
 
 <h1>Playlist Mood Triste</h1>
+<div class="conteneur-boutons">
+    <button class="mood-button concentre" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/concentre.html';">🧘 Concentré</button>
+    <button class="mood-button festif" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/festif.html';">🎉 Festif</button>
+    <button class="mood-button heureux" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/heureux.html';">😊 Heureux</button>
+</div>
 <h2>Il est normal de se sentir triste parfois, cela montre à quel point tu est humain(e).</h2>
 
 <div class="playlist-container">

@@ -59,11 +59,42 @@
             color: white;
             text-align: center;
         }
+        .conteneur-boutons {
+            position: fixed; 
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+        .mood-button {
+            margin: 10px;
+            padding: 5px 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .concentre { background-color: #5E548E; }
+        .festif { background-color: #BE95C4; }
+        .triste { background-color: #E0B1CB; }
+        .menu {background-color: white}
+
+        .mood-button:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
+<button class = "mood-button menu" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/index.html';">Menu Principal</button>
 
 <h1>Playlist Mood Heureux</h1>
+<div class="conteneur-boutons">
+    <button class="mood-button concentre" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/concentre.html';">🧘 Concentré</button>
+    <button class="mood-button festif" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/festif.html';">🎉 Festif</button>
+    <button class="mood-button triste" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/triste.html';">😢 Triste</button>
+</div>
 <h2>Ta joie de vivre est contagieuse, continue de rayonner et de répandre ton bonheur autour de toi</h2>
 
 <div class="playlist-container">
