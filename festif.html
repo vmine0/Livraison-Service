@@ -69,14 +69,27 @@ body {
             margin-top: 50px;
             font-size: 1em;
             font-family: 'Caveat', cursive; 
-            color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
             text-align: center;
+        }
+        .conteneur-boutons {
+            position: fixed; /* Utilisez `fixed` ou `absolute` selon le besoin */
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alignez les boutons à gauche dans leur conteneur */
         }
     </style>
 </head>
 <body>
 
 <h1>Playlist Mood Festif </h1>
+<div class="conteneur-boutons">
+    <button type="button">Bouton 1</button>
+    <button type="button">Bouton 2</button>
+    <button type="button">Bouton 3</button>
+  </div>
 <h2>Profitons pleinement de cet instant, la vie est une fête et tu en es l'invité d'honneur!</h2>
 
 <div class="playlist-container">
