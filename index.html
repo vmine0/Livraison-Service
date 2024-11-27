@@ -1,70 +1,454 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MoodMusic</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JPMECS2VJV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraison Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
 
-  gtag('config', 'G-JPMECS2VJV');
-</script>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #571e80, #d9c5ed);
-    color: white;
-    text-align: center;
-  }
-  h1 {
-    margin-top: 50px;
-    font-size: 3em;
-    font-family: 'Helvetica';
-  }
-  .mood-button {
-    margin: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .concentre { background-color: #5E548E; }
-  .heureux { background-color: #9F86C0; }
-  .festif { background-color: #BE95C4; }
-  .triste { background-color: #E0B1CB; }
-  .mood-button:hover {
-    opacity: 0.8;
-  }
-</style>
+    <style>
+        /* Animation de fond */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Styles de base */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white;
+        }
+
+        /* Titre principal */
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Cormorant Garamond', serif; /* Élégance et inspiration classique */
+            color: #fff;
+        }
+
+
+
+        /* Barre de navigation */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Section titre des catégories */
+        .category-title {
+            text-align: center;
+            font-size: 28px;
+            margin: 40px 0 20px;
+            font-family: 'Cormorant Garamond', serif;
+            color: #ffcc99;
+        }
+
+        /* Section produits */
+        .products {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain; /* Contient toute l'image sans la couper */
+            border-radius: 10px;
+            background: white;
+        }
+
+        .product h3 {
+            margin: 15px 0 10px;
+            font-size: 18px;
+            color: rgb(250, 193, 140);
+        }
+
+        .product p {
+            margin: 0;
+            font-size: 16px;
+            color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Titre -->
+    <div class="header">Livraison Service</div>
+    <div id="store-status" style="text-align: center; margin: 20px 0; font-family: 'Cormorant Garamond', serif;">
+        <p>Statut : <span id="status-text">Fermé</span></p>
+        <div id="status-light" style="width: 20px; height: 20px; background-color: red; border-radius: 50%; margin: 0 auto;"></div>
+    </div>
+    <script>
+        // Exemple de mise à jour dynamique
+        function updateStatus(state, color) {
+            document.getElementById('status-text').textContent = state;
+            document.getElementById('status-light').style.backgroundColor = color;
+        }
+    
+        // Appeler une API ou un fichier pour mettre à jour le statut
+        fetch('/status.json')
+            .then(response => response.json())
+            .then(data => {
+                updateStatus(data.state, data.color);
+            })
+            .catch(error => console.error('Erreur lors de la récupération du statut :', error));
+    </script>
+    
 
-<h1>MoodMusic®</h1>
+    <!-- Barre de navigation -->
+    <div class="navbar">
+        <a href="#alcool">Alcool</a>
+        <a href="#boissons">Boissons</a>
+        <a href="#snack">Snack</a>
+        <a href="#biere">Bière</a>
+        <a href="#formule">Formule</a>
+    </div>
 
-<button class="mood-button concentre" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/concentre.html';">🧘 Concentré</button>
-<button class="mood-button heureux" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/heureux.html';">😊 Heureux</button>
-<button class="mood-button festif" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/festif.html';">🎉 Festif</button>
-<button class="mood-button triste" onclick="window.location.href='https://vmine0.github.io/-amine0-.github.io/triste.html';">😢 Triste</button>
-<p>
-  Après avoir utiliser l'application pouvez-vous repondre a ce <a href="https://forms.gle/yoigy86Dw8VUuLjz9 ">questionnaire</a> ou nous envoyer directement des recommendations.<br> contacts : 
-  <br> 
-  <p>amine.aroug@universite-paris-saclay.fr</p>
-  <br> 
-  <p>yusuf.gurbuz@universite-paris-saclay.fr</p>
-  <br> 
-  <p>tanya.contacts@yahoo.com</p>
-  <br> 
-  <p>mathis.hartmann@universite-paris-saclay.fr</p>
+    <!-- Alcool -->
+    <h2 id="alcool" class="category-title">Alcool</h2>
+    <div class="products">
+        <div class="product">
+            <img src="img/poliakov-20cl.jpg" alt="Poliakov 20cl">
+            <h3>Poliakov 20cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/poliakov-70cl.jpeg" alt="Poliakov 70cl">
+            <h3>Poliakov 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/J&B-70cl.jpeg" alt="J&B 70cl">
+            <h3>J&B 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/William-70cl.jpeg" alt="William Lawson's 70cl">
+            <h3>William Lawson's 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/JackDaniel-70cl.jpeg" alt="Jack Daniel's 70cl">
+            <h3>Jack Daniel's 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Azur-1L.jpeg" alt="Azur 1L">
+            <h3>Azur 1L</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/CaptainMorganSpicedGold-70cl.jpeg" alt="Captain Morgan Spiced Gold 70cl">
+            <h3>Captain Morgan Spiced Gold 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Rhum3riviere-70cl.jpeg" alt="Rhum Trois rivière 70cl">
+            <h3>Rhum Trois rivière 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/GinGordon-70cl.jpeg" alt="Gin Gordon’s 70cl">
+            <h3>Gin Gordon’s 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/TequilaSanJose-70cl.jpeg" alt="Tequila San José 70cl">
+            <h3>Tequila San José 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/MartiniBlanc-1L.jpeg" alt="Martini Blanc 1L">
+            <h3>Martini Blanc 1L</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/MartiniRosso-1L.jpeg" alt="Martini Rouge 1L">
+            <h3>Martini Rouge 1L</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Jameson-70cl.jpeg" alt="Jameson 70cl">
+            <h3>Jameson 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/ClanCampbell-70cl.jpeg" alt="Clan Campbell 70cl">
+            <h3>Clan Campbell 70cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Label5-70cl.jpeg" alt="Label 5 20cl">
+            <h3>Label 5 20cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/ClanCampbell-20cl.jpeg" alt="Clan Campbell 20cl">
+            <h3>Clan Campbell 20cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/RhumBlanc-20cl.jpeg" alt="Rhum Blanc 20cl">
+            <h3>Rhum Blanc 20cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/RhumAmbre-70cl.jpeg" alt="Rhum Ambré 20cl">
+            <h3>Rhum Ambré 20cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/ChampagneNicolasFeuillate-75cl.jpeg" alt="Champagne Nicolas Feuillatte 75cl">
+            <h3>Champagne Nicolas Feuillatte 75cl</h3>
+            <p>Prix : 10.00€</p>
+        </div>
+    </div>
+    
 
-</p>
+    <!-- Boissons -->
+    <h2 id="boissons" class="category-title">Boissons</h2>
+    <div class="products">
+        <div class="product">
+            <img src="img/cristaline-50cl.jpeg" alt="Cristaline 50cl">
+            <h3>Cristaline 50cl</h3>
+            <p>Prix : 1.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/boisson-33cl.jpg" alt="Boisson 33cl">
+            <h3>Boisson 33cl</h3>
+            <p>Prix : 1.60€</p>
+        </div>
+        <div class="product">
+            <img src="img/redbull-25cl.jpeg" alt="Red Bull 25cl">
+            <h3>Red Bull 25cl</h3>
+            <p>Prix : 3.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/monster-50cl.jpeg" alt="Monster 50cl">
+            <h3>Monster 50cl</h3>
+            <p>Prix : 3.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Boisson-50cl.png" alt="Boisson 50cl">
+            <h3>Boison 50cl</h3>
+            <p>Prix : 2.50€</p>
+        </div>
+    </div>
 
+    <!-- Snack -->
+    <h2 id="snack" class="category-title">Snack</h2>
+    <div class="products">
+        <div class="product">
+            <img src="img/ChipsLays-135g.jpeg" alt="Chips 135g">
+            <h3>Chips 135g</h3>
+            <p>Prix : 3.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/ChipsLays-45g.jpeg" alt="Chips Lays 45g">
+            <h3>Chips Lays 45g</h3>
+            <p>Prix : 1.50€</p>
+        </div>
+        <div class="product">
+            <img src="img/Prince.jpeg" alt="Prince xg">
+            <h3>Prince xg</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Granola.jpeg" alt="Granola xg">
+            <h3>Granola xg</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/ChipsBretz.jpeg" alt="Chips Bretz xg">
+            <h3>Chips Bretz xg </h3>
+            <p>Prix : 1.50€</p>
+        </div>
+    </div>
+
+    <!-- Bière -->
+    <h2 id="biere" class="category-title">Bière</h2>
+    <div class="products">
+        <!-- Heineken -->
+        <div class="product">
+            <img src="img/Heineken-50cl.jpeg" alt="Heineken 50cl">
+            <h3>Heineken 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Heineken-12x25cl.jpeg" alt="Heineken 12x25cl">
+            <h3>Heineken 12x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Heineken-6x25cl.jpeg" alt="Heineken 6x25cl">
+            <h3>Heineken 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- 1664 -->
+        <div class="product">
+            <img src="img/1664-50cl.jpeg" alt="1664 50cl">
+            <h3>1664 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/1664-12x25cl.jpeg" alt="1664 12x25cl">
+            <h3>1664 12x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/1664-6x25cl.png" alt="1664 6x25cl">
+            <h3>1664 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- La Goudale -->
+        <div class="product">
+            <img src="img/LaGoudale-50cl .jpeg" alt="La Goudale 50cl">
+            <h3>La Goudale 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/LaGoudaleAmbree-6x25cl.png" alt="La Goudale Ambrée 6x25cl">
+            <h3>La Goudale Ambrée 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/LaGoudaleBlonde-6x25cl.jpeg" alt="La Goudale Blonde 6x25cl">
+            <h3>La Goudale Blonde 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Leffe -->
+        <div class="product">
+            <img src="img/Leffe-50cl.jpeg" alt="Leffe 50cl">
+            <h3>Leffe 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/LeffeBlonde-6x25cl.jpeg" alt="Leffe Blonde 6x25cl">
+            <h3>Leffe Blonde 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/LeffeRituel-6x25cl.jpeg" alt="Leffe Rituel 6x25cl">
+            <h3>Leffe Rituel 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/LeffeTripleBlonde-6x25cl.jpeg" alt="Leffe Triple Blonde 6x25cl">
+            <h3>Leffe Triple Blonde 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Desperados -->
+        <div class="product">
+            <img src="img/Desperados-50cl.jpeg" alt="Desperados 50cl">
+            <h3>Desperados 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/DesperadosRed-50cl.jpeg" alt="Desperados Red 50cl">
+            <h3>Desperados Red 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+        <div class="product">
+            <img src="img/Desperados-65cl.jpeg" alt="Desperados 65cl">
+            <h3>Desperados 65cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Skoll -->
+        <div class="product">
+            <img src="img/Skoll-3x33cl.jpeg" alt="Skoll 3x33cl">
+            <h3>Skoll 3x33cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Guinness -->
+        <div class="product">
+            <img src="img/Guiness-50cl.jpeg" alt="Guinness 50cl">
+            <h3>Guinness 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Sombrero -->
+        <div class="product">
+            <img src="img/Sombrero-50cl.png" alt="Sombrero 50cl">
+            <h3>Sombrero 50cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Jenlain -->
+        <div class="product">
+            <img src="img/Jenlain-6x25cl.png" alt="Jenlain Ambrée 6x25cl">
+            <h3>Jenlain Ambrée 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Pelforth -->
+        <div class="product">
+            <img src="img/Pelforth-6x25cl.jpeg" alt="Pelforth 6x25cl">
+            <h3>Pelforth 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    
+        <!-- Affligen -->
+        <div class="product">
+            <img src="img/Affligen-6x25cl.jpeg" alt="Affligen 6x25cl">
+            <h3>Affligen 6x25cl</h3>
+            <p>Prix : 2.00€</p>
+        </div>
+    </div>
+    
+    
+    <!-- Formule -->
+    <h2 id="formule" class="category-title">Formule</h2>
+    <div class="products">
+        <!-- Ajoutez vos produits formule ici -->
+    </div>
 </body>
 </html>
