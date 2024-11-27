@@ -75,6 +75,7 @@
         }
 
         /* Section produits */
+        /* Section produits */
         .products {
             display: flex;
             justify-content: center;
@@ -91,6 +92,7 @@
             max-width: 200px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            flex: 1 1 calc(33.33% - 20px); /* Par défaut, 3 produits par ligne */
         }
 
         .product img {
@@ -112,6 +114,28 @@
             font-size: 16px;
             color: #e0e0e0;
         }
+
+        /* Adaptation pour les écrans plus petits (iPhone en portrait) */
+        @media (max-width: 768px) {
+            .product {
+                flex: 1 1 calc(50% - 20px); /* 2 produits par ligne */
+            }
+        }
+
+        /* Adaptation pour les très petits écrans (iPhone en portrait très petit) */
+        @media (max-width: 480px) {
+            .product {
+                flex: 1 1 calc(100% - 20px); /* 1 produit par ligne */
+            }
+        }
+
+        /* Adaptation pour les grands écrans (tablettes ou plus) */
+        @media (min-width: 1024px) {
+            .product {
+                flex: 1 1 calc(25% - 20px); /* 4 produits par ligne */
+            }
+        }
+
     </style>
 </head>
 <body>
