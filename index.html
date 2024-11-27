@@ -9,109 +9,182 @@
 
     <style>
         /* Animation de fond */
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        /* Styles de base */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
-            background-size: 400% 400%;
-            animation: gradientAnimation 10s ease infinite;
-            color: white;
-        }
+/* Styles de base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: white;
+    padding-top: 50px; /* Pour ne pas que le contenu soit caché sous la barre sticky */
+}
 
-        /* Titre principal */
+/* Titre principal */
+.header {
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    color: #fff;
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Section titre des catégories */
+.category-title {
+    text-align: center;
+    font-size: 28px;
+    margin: 40px 0 20px;
+    font-family: 'Cormorant Garamond', serif;
+    color: #ffcc99;
+}
+
+/* Section produits */
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+    transition: transform 0.2s ease;
+}
+
+.product:hover {
+    transform: scale(1.05); /* Effet au survol pour attirer l'attention */
+}
+
+.product img {
+    width: 100%; /* Prendre toute la largeur du conteneur */
+    height: auto; /* Adapter la hauteur pour conserver les proportions */
+    object-fit: contain;
+    border-radius: 10px;
+    background: white;
+}
+
+.product h3 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+    color: rgb(250, 193, 140);
+}
+
+.product p {
+    margin: 0;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Ajuster l'espace pour la barre de navigation sticky */
+    }
+
+    .header {
+        font-size: 30px; /* Taille du texte plus petite */
+        padding: 15px;
+    }
+
+    .navbar a {
+        font-size: 16px; /* Taille du texte plus petite dans la barre de navigation */
+        margin: 0 10px; /* Réduire l'espacement */
+    }
+
+    .category-title {
+        font-size: 24px; /* Réduire la taille du titre */
+    }
+
+    .products {
+        flex-direction: column; /* Disposer les produits en colonne sur petits écrans */
+        gap: 15px;
+    }
+
+    .product {
+        max-width: 150px; /* Réduire la taille maximale des produits */
+        padding: 15px;
+    }
+
+    .product h3 {
+        font-size: 16px; /* Réduire la taille du titre du produit */
+    }
+
+    .product p {
+        font-size: 14px; /* Réduire la taille de la description */
+    }
+
+    /* Taille de la police et espacements encore plus réduits pour les très petits écrans */
+    @media (max-width: 480px) {
         .header {
-            text-align: center;
-            padding: 20px;
-            font-size: 40px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-family: 'Cormorant Garamond', serif; /* Élégance et inspiration classique */
-            color: #fff;
-        }
-
-
-
-        /* Barre de navigation */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 10px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            font-size: 24px;
         }
 
         .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-family: 'Cormorant Garamond', serif;
-            margin: 0 15px;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-size: 14px;
         }
 
-        .navbar a:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Section titre des catégories */
         .category-title {
-            text-align: center;
-            font-size: 28px;
-            margin: 40px 0 20px;
-            font-family: 'Cormorant Garamond', serif;
-            color: #ffcc99;
-        }
-
-        /* Section produits */
-        .products {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
+            font-size: 20px;
         }
 
         .product {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            max-width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .product img {
-            width: 150px;
-            height: 150px;
-            object-fit: contain; /* Contient toute l'image sans la couper */
-            border-radius: 10px;
-            background: white;
+            max-width: 120px;
+            padding: 12px;
         }
 
         .product h3 {
-            margin: 15px 0 10px;
-            font-size: 18px;
-            color: rgb(250, 193, 140);
+            font-size: 14px;
         }
 
         .product p {
-            margin: 0;
-            font-size: 16px;
-            color: #e0e0e0;
+            font-size: 12px;
         }
+    }
+}
+
     </style>
 </head>
 <body>
