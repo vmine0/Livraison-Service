@@ -8,36 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        /* Animation de fond */
+/* Styles par défaut pour le mode ordinateur */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: white;
+    margin: 0;
+    padding-top: 50px;
+}
+
+/* Animation de fond */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Styles de base */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
-    background-size: 400% 400%;
-    animation: gradientAnimation 10s ease infinite;
-    color: white;
-    padding-top: 50px; /* Pour ne pas que le contenu soit caché sous la barre sticky */
-}
-
-/* Titre principal */
-.header {
-    text-align: center;
-    padding: 20px;
-    font-size: 40px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: 'Cormorant Garamond', serif;
-    color: #fff;
-}
-
-/* Barre de navigation */
+/* Barre de navigation - Mode bureau */
 .navbar {
     display: flex;
     justify-content: center;
@@ -53,7 +42,6 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-family: 'Cormorant Garamond', serif;
     margin: 0 15px;
     padding: 8px 15px;
     border-radius: 5px;
@@ -64,16 +52,7 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Section titre des catégories */
-.category-title {
-    text-align: center;
-    font-size: 28px;
-    margin: 40px 0 20px;
-    font-family: 'Cormorant Garamond', serif;
-    color: #ffcc99;
-}
-
-/* Section produits */
+/* Produit - Mode bureau */
 .products {
     display: flex;
     justify-content: center;
@@ -90,17 +69,11 @@ body {
     max-width: 200px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    flex-grow: 1;
-    transition: transform 0.2s ease;
-}
-
-.product:hover {
-    transform: scale(1.05); /* Effet au survol pour attirer l'attention */
 }
 
 .product img {
-    width: 100%; /* Prendre toute la largeur du conteneur */
-    height: auto; /* Adapter la hauteur pour conserver les proportions */
+    width: 100%;
+    height: auto;
     object-fit: contain;
     border-radius: 10px;
     background: white;
@@ -118,70 +91,72 @@ body {
     color: #e0e0e0;
 }
 
-/* Responsivité pour les petits écrans */
+/* ----------------------------------------------------------- */
+
+/* Mode téléphone -  Ecrans jusqu'à 768px */
 @media (max-width: 768px) {
     body {
-        padding-top: 60px; /* Ajuster l'espace pour la barre de navigation sticky */
+        padding-top: 60px; /* Ajuste l'espace pour la barre de navigation sticky */
     }
 
-    .header {
-        font-size: 30px; /* Taille du texte plus petite */
-        padding: 15px;
+    .navbar {
+        flex-direction: column; /* Met les liens en colonne pour les petits écrans */
     }
 
     .navbar a {
-        font-size: 16px; /* Taille du texte plus petite dans la barre de navigation */
-        margin: 0 10px; /* Réduire l'espacement */
-    }
-
-    .category-title {
-        font-size: 24px; /* Réduire la taille du titre */
+        font-size: 16px;
+        margin: 5px 0; /* Moins d'espace entre les éléments */
     }
 
     .products {
-        flex-direction: column; /* Disposer les produits en colonne sur petits écrans */
+        flex-direction: column; /* Affiche les produits en colonne */
         gap: 15px;
     }
 
     .product {
-        max-width: 150px; /* Réduire la taille maximale des produits */
+        max-width: 150px; /* Réduit la largeur des produits */
         padding: 15px;
     }
 
     .product h3 {
-        font-size: 16px; /* Réduire la taille du titre du produit */
+        font-size: 16px;
     }
 
     .product p {
-        font-size: 14px; /* Réduire la taille de la description */
+        font-size: 14px;
+    }
+}
+
+/* Mode téléphone très petit - Ecrans jusqu'à 480px */
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px; /* Augmente l'espace pour les écrans très petits */
     }
 
-    /* Taille de la police et espacements encore plus réduits pour les très petits écrans */
-    @media (max-width: 480px) {
-        .header {
-            font-size: 24px;
-        }
+    .navbar {
+        flex-direction: column; /* Passe en colonne */
+    }
 
-        .navbar a {
-            font-size: 14px;
-        }
+    .navbar a {
+        font-size: 14px; /* Taille des textes encore réduite */
+    }
 
-        .category-title {
-            font-size: 20px;
-        }
+    .products {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-        .product {
-            max-width: 120px;
-            padding: 12px;
-        }
+    .product {
+        max-width: 120px; /* Taille encore réduite pour les très petits écrans */
+        padding: 10px;
+    }
 
-        .product h3 {
-            font-size: 14px;
-        }
+    .product h3 {
+        font-size: 14px;
+    }
 
-        .product p {
-            font-size: 12px;
-        }
+    .product p {
+        font-size: 12px;
     }
 }
 
