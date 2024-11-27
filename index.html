@@ -75,66 +75,69 @@
         }
 
         /* Section produits */
-        /* Section produits */
-        .products {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-        }
+.products {
+    display: flex;
+    justify-content: flex-start; /* Aligne les éléments au début de la ligne */
+    align-items: flex-start;
+    flex-wrap: wrap;  /* Permet à l'élément de passer à la ligne suivante si nécessaire */
+    gap: 20px;  /* Espace entre les produits */
+    padding: 20px;
+    width: 100%;  /* Assure que la section prend toute la largeur de son conteneur */
+}
 
-        .product {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            max-width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            flex: 1 1 calc(33.33% - 20px); /* Par défaut, 3 produits par ligne */
-        }
+.product {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Utilise un `flex-basis` et `max-width` pour contrôler la largeur des produits */
+    flex: 1 1 calc(33.33% - 20px);  /* 3 produits par ligne par défaut */
+    max-width: 200px;  /* Limite la largeur du produit */
+    box-sizing: border-box;  /* Assure que le padding est inclus dans la largeur */
+}
 
-        .product img {
-            width: 150px;
-            height: 150px;
-            object-fit: contain; /* Contient toute l'image sans la couper */
-            border-radius: 10px;
-            background: white;
-        }
+.product img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain; /* Contient toute l'image sans la couper */
+    border-radius: 10px;
+    background: white;
+}
 
-        .product h3 {
-            margin: 15px 0 10px;
-            font-size: 18px;
-            color: rgb(250, 193, 140);
-        }
+.product h3 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+    color: rgb(250, 193, 140);
+}
 
-        .product p {
-            margin: 0;
-            font-size: 16px;
-            color: #e0e0e0;
-        }
+.product p {
+    margin: 0;
+    font-size: 16px;
+    color: #e0e0e0;
+}
 
-        /* Adaptation pour les écrans plus petits (iPhone en portrait) */
-        @media (max-width: 768px) {
-            .product {
-                flex: 1 1 calc(50% - 20px); /* 2 produits par ligne */
-            }
-        }
+/* Adaptation pour les écrans de taille moyenne, comme les tablettes */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(50% - 20px);  /* 2 produits par ligne */
+    }
+}
 
-        /* Adaptation pour les très petits écrans (iPhone en portrait très petit) */
-        @media (max-width: 480px) {
-            .product {
-                flex: 1 1 calc(100% - 20px); /* 1 produit par ligne */
-            }
-        }
+/* Adaptation pour les petits écrans, comme les iPhones */
+@media (max-width: 480px) {
+    .product {
+        flex: 1 1 calc(100% - 20px);  /* 1 produit par ligne */
+    }
+}
 
-        /* Adaptation pour les grands écrans (tablettes ou plus) */
-        @media (min-width: 1024px) {
-            .product {
-                flex: 1 1 calc(25% - 20px); /* 4 produits par ligne */
-            }
-        }
+/* Adaptation pour les grands écrans */
+@media (min-width: 1024px) {
+    .product {
+        flex: 1 1 calc(25% - 20px);  /* 4 produits par ligne */
+    }
+}
+
 
     </style>
 </head>
