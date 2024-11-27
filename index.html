@@ -36,8 +36,15 @@
             font-family: 'Cormorant Garamond', serif; /* Élégance et inspiration classique */
             color: #fff;
         }
+        .header .left {
+            font-size: 25px;
+        }
 
-
+        .status {
+            text-align: left;
+            margin: 20px 0;
+            font-family: 'Cormorant Garamond', serif;
+        }
 
         /* Barre de navigation */
         .navbar {
@@ -113,15 +120,71 @@
             font-size: 16px;
             color: #e0e0e0;
         }
+        @media (max-width: 768px) {
+        .products {
+            justify-content: space-around; /* Espacement équilibré entre les produits */
+        }
+
+        .product {
+            flex: 1 1 calc(25% - 20px); /* Ajuste la largeur à 25% moins l'espace de la gap */
+            max-width: calc(25% - 20px); /* Empêche un dépassement si trop de produits */
+        }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                flex: 1 1 calc(33.33% - 10px); /* Pour plus d’espace sur les très petits écrans */
+                max-width: calc(33.33% - 10px);
+            }
+        }
+        @media (max-width: 768px) {
+            .product img {
+                width: 90%; /* Réduction légère pour éviter de toucher les bordures */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product img {
+                width: 80%; /* Plus petit sur les très petits écrans */
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: space-around; /* Espacement équilibré pour les petits écrans */
+            }
+
+            .navbar a {
+                font-size: 16px; /* Réduit la taille du texte si nécessaire */
+                padding: 8px; /* Ajuste l'espacement autour des liens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-wrap: wrap; /* Permet de passer les liens sur plusieurs lignes si nécessaire */
+            }
+
+            .navbar a {
+                font-size: 14px; /* Encore plus petit pour les très petits écrans */
+            }
+        }
+
+
+
     
     </style>
 </head>
 <body>
     <!-- Titre -->
-    <div class="header">Livraison Service</div>
+    <div class="header">
+        <div class="center">Livraison Service</div>
+        <div class="left">Tel : 06 67 25 07 42</div>
+    </div>
+    <div class = "status">
     <div id="store-status" style="text-align: center; margin: 20px 0; font-family: 'Cormorant Garamond', serif;">
         <p>Statut : <span id="status-text">Fermé</span></p>
         <div id="status-light" style="width: 20px; height: 20px; background-color: red; border-radius: 50%; margin: 0 auto;"></div>
+    </div>
     </div>
     <script>
         // Exemple de mise à jour dynamique
@@ -155,97 +218,97 @@
         <div class="product">
             <img src="img/poliakov-20cl.jpg" alt="Poliakov 20cl">
             <h3>Poliakov 20cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/poliakov-70cl.jpeg" alt="Poliakov 70cl">
             <h3>Poliakov 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/J&B-70cl.jpeg" alt="J&B 70cl">
             <h3>J&B 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/William-70cl.jpeg" alt="William Lawson's 70cl">
             <h3>William Lawson's 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/JackDaniel-70cl.jpeg" alt="Jack Daniel's 70cl">
             <h3>Jack Daniel's 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/Azur-1L.jpeg" alt="Azur 1L">
             <h3>Azur 1L</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/CaptainMorganSpicedGold-70cl.jpeg" alt="Captain Morgan Spiced Gold 70cl">
             <h3>Captain Morgan Spiced Gold 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/Rhum3riviere-70cl.jpeg" alt="Rhum Trois rivière 70cl">
             <h3>Rhum Trois rivière 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/GinGordon-70cl.jpeg" alt="Gin Gordon’s 70cl">
             <h3>Gin Gordon’s 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/TequilaSanJose-70cl.jpeg" alt="Tequila San José 70cl">
             <h3>Tequila San José 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/MartiniBlanc-1L.jpeg" alt="Martini Blanc 1L">
             <h3>Martini Blanc 1L</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/MartiniRosso-1L.jpeg" alt="Martini Rouge 1L">
             <h3>Martini Rouge 1L</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/Jameson-70cl.jpeg" alt="Jameson 70cl">
             <h3>Jameson 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/ClanCampbell-70cl.jpeg" alt="Clan Campbell 70cl">
             <h3>Clan Campbell 70cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/Label5-70cl.jpeg" alt="Label 5 20cl">
             <h3>Label 5 20cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/ClanCampbell-20cl.jpeg" alt="Clan Campbell 20cl">
             <h3>Clan Campbell 20cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/RhumBlanc-20cl.jpeg" alt="Rhum Blanc 20cl">
             <h3>Rhum Blanc 20cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/RhumAmbre-70cl.jpeg" alt="Rhum Ambré 20cl">
             <h3>Rhum Ambré 20cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
         <div class="product">
             <img src="img/ChampagneNicolasFeuillate-75cl.jpeg" alt="Champagne Nicolas Feuillatte 75cl">
             <h3>Champagne Nicolas Feuillatte 75cl</h3>
-            <p>Prix : 10.00€</p>
+            <p>Prix : 0.00€</p>
         </div>
     </div>
     
