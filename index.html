@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
 
     <style>
-/* Styles par défaut pour le mode ordinateur */
- /* Animation de fond */
- @keyframes gradientAnimation {
+        
+        /* Animation de fond */
+        @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -113,75 +113,7 @@
             font-size: 16px;
             color: #e0e0e0;
         }
-/* ----------------------------------------------------------- */
-
-/* Mode téléphone -  Ecrans jusqu'à 768px */
-@media (max-width: 768px) {
-    body {
-        padding-top: 60px; /* Ajuste l'espace pour la barre de navigation sticky */
-    }
-
-    .navbar {
-        flex-direction: column; /* Met les liens en colonne pour les petits écrans */
-    }
-
-    .navbar a {
-        font-size: 16px;
-        margin: 5px 0; /* Moins d'espace entre les éléments */
-    }
-
-    .products {
-        flex-direction: column; /* Affiche les produits en colonne */
-        gap: 15px;
-    }
-
-    .product {
-        max-width: 150px; /* Réduit la largeur des produits */
-        padding: 15px;
-    }
-
-    .product h3 {
-        font-size: 16px;
-    }
-
-    .product p {
-        font-size: 14px;
-    }
-}
-
-/* Mode téléphone très petit - Ecrans jusqu'à 480px */
-@media (max-width: 480px) {
-    body {
-        padding-top: 70px; /* Augmente l'espace pour les écrans très petits */
-    }
-
-    .navbar {
-        flex-direction: column; /* Passe en colonne */
-    }
-
-    .navbar a {
-        font-size: 14px; /* Taille des textes encore réduite */
-    }
-
-    .products {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .product {
-        max-width: 120px; /* Taille encore réduite pour les très petits écrans */
-        padding: 10px;
-    }
-
-    .product h3 {
-        font-size: 14px;
-    }
-
-    .product p {
-        font-size: 12px;
-    }
-}
-
+    
     </style>
 </head>
 <body>
