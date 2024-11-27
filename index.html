@@ -9,88 +9,110 @@
 
     <style>
 /* Styles par défaut pour le mode ordinateur */
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
-    background-size: 400% 400%;
-    animation: gradientAnimation 10s ease infinite;
-    color: white;
-    margin: 0;
-    padding-top: 50px;
-}
+ /* Animation de fond */
+ @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-/* Animation de fond */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        /* Styles de base */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white;
+        }
 
-/* Barre de navigation - Mode bureau */
-.navbar {
-    display: flex;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
+        /* Titre principal */
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Cormorant Garamond', serif; /* Élégance et inspiration classique */
+            color: #fff;
+        }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 15px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
 
-.navbar a:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
 
-/* Produit - Mode bureau */
-.products {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
+        /* Barre de navigation */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-.product {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    max-width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
 
-.product img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    background: white;
-}
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
 
-.product h3 {
-    margin: 15px 0 10px;
-    font-size: 18px;
-    color: rgb(250, 193, 140);
-}
+        /* Section titre des catégories */
+        .category-title {
+            text-align: center;
+            font-size: 28px;
+            margin: 40px 0 20px;
+            font-family: 'Cormorant Garamond', serif;
+            color: #ffcc99;
+        }
 
-.product p {
-    margin: 0;
-    font-size: 16px;
-    color: #e0e0e0;
-}
+        /* Section produits */
+        .products {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
 
+        .product {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain; /* Contient toute l'image sans la couper */
+            border-radius: 10px;
+            background: white;
+        }
+
+        .product h3 {
+            margin: 15px 0 10px;
+            font-size: 18px;
+            color: rgb(250, 193, 140);
+        }
+
+        .product p {
+            margin: 0;
+            font-size: 16px;
+            color: #e0e0e0;
+        }
 /* ----------------------------------------------------------- */
 
 /* Mode téléphone -  Ecrans jusqu'à 768px */
