@@ -118,6 +118,22 @@
             font-size: 16px;
             color: #e0e0e0;
         }
+
+        /* Style du voyant */
+        .voyant {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 10px auto;
+            background-color: gray; /* couleur par défaut */
+        }
+
+        .status-message {
+            text-align: center;
+            font-size: 18px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
         @media (max-width: 768px) {
         .products {
             justify-content: space-around; /* Espacement équilibré entre les produits */
@@ -174,8 +190,33 @@
 </head>
 <body>
     <div class="header">
-        Livraison Service
+        <div class="center">Livraison Service</div>
+        <div class="left">Tel : 06 67 25 07 42</div>
     </div>
+    <div class="status-message">
+        <p id="stateText">Chargement...</p>
+    </div>
+    <div class="voyant" id="voyant"></div>
+
+    <script>
+        // Fonction pour récupérer les données de status.json
+        fetch('status.json')
+            .then(response => response.json())
+            .then(data => {
+                // Récupérer les données du JSON
+                const state = data.state;
+                const color = data.color;
+
+                // Modifier l'état et la couleur du voyant
+                document.getElementById('stateText').innerText = state;
+                document.getElementById('voyant').style.backgroundColor = color;
+            })
+            .catch(error => {
+                console.error("Erreur lors de la récupération du fichier JSON :", error);
+                document.getElementById('stateText').innerText = "Erreur de chargement";
+            });
+    </script>
+
 
     <!-- Barre de navigation -->
     <div class="navbar">
