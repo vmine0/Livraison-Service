@@ -166,20 +166,15 @@
                 font-size: 14px; /* Encore plus petit pour les très petits écrans */
             }
         }
-        
+
+
+
+    
     </style>
 </head>
 <body>
-    <!-- Titre -->
     <div class="header">
-        <div class="center">Livraison Service</div>
-        <div class="left">Tel : 06 67 25 07 42</div>
-    </div>
-    <div class = "status">
-        <div id="store-status" style="text-align: center; margin: 20px 0; font-family: 'Cormorant Garamond', serif;">
-            <p>Statut : <span id="status-text">Fermé</span></p>
-            <div id="status-light" style="width: 20px; height: 20px; background-color: red; border-radius: 50%; margin: 0 auto;"></div>
-        </div>
+        Livraison Service
     </div>
 
     <!-- Barre de navigation -->
@@ -191,56 +186,54 @@
         <a href="#formule">Formule</a>
     </div>
 
-        <!-- Sections dynamiques -->
-    <h2 id="alcool" class="category-title">Alcool</h2>
+    <!-- Sections de produits -->
+    <h2 class="category-title">Alcool</h2>
     <div class="products" id="alcool"></div>
 
-    <h2 id="boissons" class="category-title">Boissons</h2>
+    <h2 class="category-title">Boissons</h2>
     <div class="products" id="boissons"></div>
 
-    <h2 id="snack" class="category-title">Snack</h2>
+    <h2 class="category-title">Snack</h2>
     <div class="products" id="snack"></div>
 
-    <h2 id="biere" class="category-title">Bière</h2>
+    <h2 class="category-title">Bière</h2>
     <div class="products" id="biere"></div>
 
-    <h2 id="formule" class="category-title">Formule</h2>
+    <h2 class="category-title">Formule</h2>
     <div class="products" id="formule"></div>
 
-    <!-- Scripts -->
     <script src="products.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Liste des catégories basées sur les ids
+            // Liste des catégories
             const categories = ["alcool", "boissons", "snack", "biere", "formule"];
-
-            // Pour chaque catégorie, nous allons afficher les produits correspondants
+            
+            // Parcourir chaque catégorie et ajouter dynamiquement les produits
             categories.forEach(category => {
                 const categoryContainer = document.getElementById(category);
 
                 if (categoryContainer) {
-                    // Filtrer les produits par type (qui correspond à l'id de la catégorie)
+                    // Filtrer les produits de cette catégorie
                     products
                         .filter(product => product.type === category)
                         .forEach(product => {
-                            // Création d'une div pour chaque produit
+                            // Créer une div pour chaque produit
                             const productDiv = document.createElement("div");
                             productDiv.className = "product";
 
-                            // Contenu du produit : image, nom et prix
+                            // Ajouter l'image, le nom et le prix du produit
                             productDiv.innerHTML = `
                                 <img src="${product.img}" alt="${product.alt}">
                                 <h3>${product.name}</h3>
                                 <p>Prix : ${product.price}</p>
                             `;
 
-                            // Ajouter la div du produit à la section correspondant à la catégorie
+                            // Ajouter le produit au conteneur de la catégorie
                             categoryContainer.appendChild(productDiv);
                         });
                 }
             });
         });
     </script>
-
 </body>
 </html>
