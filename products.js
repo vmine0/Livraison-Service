@@ -1,5 +1,6 @@
 const products = [
     // Alcool
+    { img: "img/PHOTO-2021-12-15-22-22-12.jpg" , alt: "Vodka 20cl", name: "Hakim pour une nuit", price: "1000000à€", type: "alcool" },
     { img: "img/poliakov-20cl.jpg", alt: "Poliakov 20cl", name: "Poliakov 20cl", price: "0.00€", type: "alcool" },
     { img: "img/poliakov-70cl.jpeg", alt: "Poliakov 70cl", name: "Poliakov 70cl", price: "0.00€", type: "alcool" },
     { img: "img/J&B-70cl.jpeg", alt: "J&B 70cl", name: "J&B 70cl", price: "0.00€", type: "alcool" },
