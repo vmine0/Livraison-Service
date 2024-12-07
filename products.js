@@ -47,6 +47,36 @@ const products = [
     { img: "img/Leffe-50cl.jpeg", alt: "Leffe 50cl", name: "Leffe 50cl", price: "2.00€", type: "biere" },
     { img: "img/LeffeBlonde-6x25cl.jpeg", alt: "Leffe Blonde 6x25cl", name: "Leffe Blonde 6x25cl", price: "2.00€", type: "biere" },
 
+    // Cremerie 
+    { img :"img/activia.jpeg", alt: "activia", name: "Activia x4", price: "1.95", type: "cremerie" },
+    { img :"img/veloute.jpeg", alt: "veloute", name: "Velouté x4", price: "1.95", type: "cremerie" },
+    { img :"img/gervita.jpeg", alt: "gervita", name: "gervita x4", price: "1.00", type: "cremerie" },
+    { img :"img/fjord.jpeg", alt: "fjord", name: "x", price: "", type: "cremerie" },
+    { img :"img/rizaulait.jpeg", alt: "rizaulait", name: "x", price: "", type: "cremerie" },
+    { img :"img/danettechocolat.jpeg", alt: "danettechocolat", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/danettevanille.jpeg", alt: "danettevanille", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/maminovaananas.jpeg", alt: "mamienovaananas", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/maminovafraise.jpeg", alt: "mamienovafraise", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/maminovapeche.jpeg", alt: "mamienovapeche", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/mousseauchocolat.jpeg", alt: "moussechoco", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/viennoiscafe.jpeg", alt: "vienoicafe", name: "x", price: "1.00", type: "cremerie" },
+    
+    { img :"img/compotepommebanane.jpeg", alt: "compotepomme", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/compotepommeframboise.jpeg", alt: "compoteframboise", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/compotepommepoire.jpeg", alt: "compotepommepoire", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/beurrepresidentdemisel.jpeg", alt: "beurredemiseil", name: "x", price: "1.00", type: "cremerie" },
+    { img :"img/beurrepresidentdoux.jpeg", alt: "beureedoux", name: "x", price: "1.00", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+    { img :"", alt: "", name: "", price: "", type: "cremerie" },
+
+
     // Formule
     { img: "img/Formule10€.png", alt: "Formule P1", name: "Formule P1", price: "10.00€", type: "formule" }
 ];
