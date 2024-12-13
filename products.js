@@ -48,8 +48,8 @@ const products = [
     { img: "img/LeffeBlonde-6x25cl.jpeg", alt: "Leffe Blonde 6x25cl", name: "Leffe Blonde 6x25cl", price: "2.00€", type: "biere" },
 
     // yaourt 
-    { img :"img/activia.jpeg", alt: "activia", name: "ACTIVIA NATURE 4x125g", price: "2,25", type: "yaourt" },
-    { img :"img/veloute.jpeg", alt: "veloute", name: "VELOUTE NATURE 4x125g", price: "1.95", type: "yaourt" },
+    { img :"img/activia.jpeg", alt: "activia", name: "ACTIVIA NATURE 4x125g", price: "2,25€", type: "yaourt" },
+    { img :"img/veloute.jpeg", alt: "veloute", name: "VELOUTE NATURE 4x125g", price: "1.95€", type: "yaourt" },
     { img :"img/gervita.jpeg", alt: "gervita", name: "GERVITA 4x125g", price: "2.65€", type: "yaourt" },
     { img :"img/fjord.jpeg", alt: "fjord", name: "FJORD NATURE 4x125g", price: "2,55€", type: "yaourt" },
     { img :"img/rizaulait.jpeg", alt: "rizaulait", name: "RIZ AU LAIT SAVEUR VANILLE 4x115g", price: "2,65€", type: "yaourt" },
