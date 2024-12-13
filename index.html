@@ -17,7 +17,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff7f50, #cb7914, #ff6ec4, #6e95ff);
+            background:#125312;
             background-size: 400% 400%;
             animation: gradientAnimation 10s ease infinite;
             color: white;
@@ -27,10 +27,11 @@
             text-align: center;
             padding: 20px;
             font-size: 40px;
+            background: linear-gradient(135deg, #125312, #265d26, #648f64, #96c196);
             font-weight: bold;
             text-transform: uppercase;
             font-family: 'Cormorant Garamond', serif;
-            color: #fff;
+            color: #040101;
         }
 
         .header .left {
@@ -189,11 +190,11 @@
     <div class="header">
         <div class="center">Livraison Service</div>
         <div class="left">Tel : 06 67 25 07 42</div>
+        <div class="status-message">
+            <p id="stateText">Chargement...</p>
+        </div>
+        <div class="voyant" id="voyant"></div>
     </div>
-    <div class="status-message">
-        <p id="stateText">Chargement...</p>
-    </div>
-    <div class="voyant" id="voyant"></div>
 
     <!-- Barre de navigation -->
     <div class="navbar">
@@ -202,6 +203,7 @@
         <a href="#snack">Snack</a>
         <a href="#biere">Bière</a>
         <a href="#epicerie">Epicerie</a>
+        <a href="#yaourt">Yaourt</a>
         <a href="#cremerie">Cremerie</a>
         <a href="#fruits">Fruits et légumes</a>
         <a href="#petit-dejeuner">Petit-déjeuner</a>
@@ -225,6 +227,9 @@
     <h2 class="category-title">Epicerie</h2>
     <div class="products" id="epicerie"></div>
 
+    <h2 class="category-title">Yaourt</h2>
+    <div class="products" id="yaourt"></div>
+
     <h2 class="category-title">Cremerie</h2>
     <div class="products" id="cremerie"></div>
 
@@ -245,7 +250,7 @@
     <script src="products.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const categories = ["alcool", "boissons", "snack", "biere", "formule", "epicerie", "cremerie", "fruits", "petit-dejeuner", "entretien"];
+            const categories = ["alcool", "boissons", "snack", "biere", "formule", "epicerie", "yaourt", "cremerie", "fruits", "petit-dejeuner", "entretien"];
             categories.forEach(category => {
                 const categoryContainer = document.getElementById(category);
                 if (categoryContainer) {
