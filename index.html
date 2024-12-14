@@ -292,13 +292,39 @@
                 console.error('Erreur lors du chargement du fichier JSON:', error);
             });
     </script>
+    <script>
+        function adjustPrices() {
+    const currentHour = new Date().getHours();
+    let priceIncrease = 0;
+
+    // Définir la majoration selon l'heure
+    if (currentHour >= 21 && currentHour < 23) {
+        priceIncrease = 0.4; // 40%
+    } else if (currentHour >= 23 || currentHour < 1) {
+        priceIncrease = 0.6; // 60%
+    }
+
+    // Appliquer la majoration à tous les produits affichés
+    document.querySelectorAll('.product p').forEach(priceTag => {
+        const basePrice = parseFloat(priceTag.textContent.match(/[\d\.]+/));
+        if (!isNaN(basePrice)) {
+            const newPrice = (basePrice * (1 + priceIncrease)).toFixed(2);
+            priceTag.textContent = `Prix : ${newPrice} €`;
+        }
+    });
+}
+
+// Appeler la fonction après le chargement de la page
+document.addEventListener('DOMContentLoaded', adjustPrices);
+
+    </script>
         <!-- Pied de page -->
         <footer style="background: rgba(0, 0, 0, 0.7); color: white; text-align: center; padding: 20px;">
             <p>En journée : Les prix sont les mêmes qu'en magasin avec seulement 5€ de frais de livraison pour les paniers en dessous de 20€.</p>
             <p>La nuit :</p>
             <ul>
-                <li>De 21h30 à 23h00 : Les prix augmentent de 30%.</li>
-                <li>De 23h00 à 1h00 : Les prix augmentent de 50%.</li>
+                <li>De 21h30 à 23h00 : Les prix augmentent de 40%.</li>
+                <li>De 23h00 à 1h00 : Les prix augmentent de 60%.</li>
             </ul>
         </footer>
     
