@@ -118,14 +118,15 @@ const products = [
     { img :"img/Tranchecheddar.jpeg", alt: "tranchetteburger", name: "TRANCHETTE BURGER CHEDDAR 200g", price: "100€", type: "Cremerie" },
     { img :"img/croqueemmental.jpeg", alt: "tranchetteemmental", name: "TRANCHETTE EMMENTAL 200g", price: "100€", type: "Cremerie" },
 
-    { img :"img/panzanibolognaise.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
+    
     { img :"img/panzanicoquillette.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
     { img :"img/panzanicouderaye.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
     { img :"img/panzanifarfale.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
-    { img :"img/panzanipesto.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
+    { img :"img/panzaniserpenntini.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
     { img :"img/panzanipiperigate.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
     { img :"img/panzaniprovencale.png", alt: "", name: "", price: "100€", type: "Pate" },
-    { img :"img/panzaniserpenntini.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
+    { img :"img/panzanibolognaise.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
+    { img :"img/panzanipesto.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
     { img :"img/panzanitomacouli.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
     { img :"img/zapettitomate.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
     { img :"img/lessieurmayopot.jpeg", alt: "", name: "", price: "100€", type: "Pate" },
