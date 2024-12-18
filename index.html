@@ -131,6 +131,9 @@
             width: 200px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+            flex-direction: column; /* Empile les éléments verticalement */
+            height: 300px; /* Hauteur de la div parent pour voir l'effet */
         }
 
         .product img {
@@ -152,6 +155,84 @@
             font-size: 16px;
             color: #145A32;
         }
+        /* Style pour le bouton panier flottant */
+    .cart-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #1E8449;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+    }
+    
+    .boutton-ajouter {
+        background-color: #1E8449;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    
+
+    /* Style pour la liste du panier */
+    .cart-container {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        width: 300px;
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 10px;
+        display: none; /* Par défaut, caché */
+        z-index: 99;
+    }
+
+    /* Style des éléments dans la liste du panier */
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Style du bouton fermer (x) */
+    .close-cart {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #1E8449;
+    }
+
+    /* Responsivité pour les petits écrans */
+    @media (max-width: 768px) {
+        .cart-container {
+            width: 250px;
+        }
+
+        .cart-button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+        }
+    }
 
         @media (max-width: 768px) {
             .product {
@@ -230,6 +311,9 @@
     <h2 class="category-title">Boissons</h2>
     <div class="products" id="Boissons"></div>
 
+    <h2 class="category-title">Gateaux</h2>
+    <div class="products" id="gateaux"></div>
+
     <h2 class="category-title">Snack</h2>
     <div class="products" id="Snack"></div>
 
@@ -267,8 +351,139 @@
     <!-- Script pour ajouter les produits -->
     <script src="products.js"></script>
     <script>
+        // Tableau pour stocker les produits sélectionnés
+        let selectedProducts = [];
+    
+        // Fonction pour ajouter un produit à la liste
+        function addToList(product, quantity) {
+            // Vérifie si le produit est déjà dans la liste
+            let found = false;
+            for (let item of selectedProducts) {
+                if (item.product.name === product.name) {
+                    item.quantity += quantity; // Si oui, on augmente la quantité
+                    found = true;
+                    break;
+                }
+            }
+    
+            // Si le produit n'est pas trouvé, on l'ajoute à la liste
+            if (!found) {
+                selectedProducts.push({ product: product, quantity: quantity });
+            }
+            updateCart();
+        }
+    
+        // Fonction pour afficher la liste des produits sélectionnés dans le panier
+        function updateCart() {
+    const listContainer = document.getElementById("selected-products-list");
+    const totalPriceElement = document.getElementById("totalPrice");
+    listContainer.innerHTML = ""; // Réinitialise la liste
+
+    let total = 0;
+    selectedProducts.forEach(item => {
+        const price = parseFloat(item.product.price);
+        const amount = (price * item.quantity).toFixed(2);
+        total += price * item.quantity;
+
+        // Créer la div pour chaque produit dans le panier
+        const productDiv = document.createElement("div");
+        productDiv.className = "cart-item";
+
+        // Créer le texte du produit et du montant
+        const text = document.createElement("span");
+        text.textContent = `${item.product.name} - ${amount} € `;
+
+        // Créer les boutons + et -
+        const minusButton = document.createElement("button");
+        minusButton.textContent = "-";
+        minusButton.className = "quantity-button";
+        minusButton.addEventListener("click", () => updateQuantity(item.product, -1)); // Diminue la quantité
+
+        const plusButton = document.createElement("button");
+        plusButton.textContent = "+";
+        plusButton.className = "quantity-button";
+        plusButton.addEventListener("click", () => updateQuantity(item.product, 1)); // Augmente la quantité
+
+        // Créer un élément pour afficher la quantité
+        const quantitySpan = document.createElement("span");
+        quantitySpan.textContent = ` ${item.quantity} `;
+
+        // Ajouter les éléments au produit div
+        productDiv.appendChild(text);
+        productDiv.appendChild(minusButton);
+        productDiv.appendChild(quantitySpan);
+        productDiv.appendChild(plusButton);
+
+        // Ajouter le produit au conteneur
+        listContainer.appendChild(productDiv);
+    });
+
+    totalPriceElement.textContent = `Total : ${total.toFixed(2)} €`;
+}
+
+
+
+        function updateQuantity(product, change) {
+            // Recherche l'élément dans le tableau `selectedProducts`
+            const item = selectedProducts.find(item => item.product.name === product.name);
+            
+            if (item) {
+                item.quantity += change; // Modifie la quantité en fonction de `change` (-1 ou +1)
+
+                // Empêche la quantité de devenir inférieure à 1
+                if (item.quantity <= 0) {
+                    // Retirer l'élément du panier si la quantité atteint 0 ou moins
+                    selectedProducts = selectedProducts.filter(item => item.product.name !== product.name);
+                }
+
+                updateCart(); // Met à jour le panier après la modification de la quantité
+            }
+        }
+
+
+
+    
+        // Fonction pour afficher ou masquer le panier
+        function toggleCart() {
+            const cartContainer = document.getElementById("cartContainer");
+            cartContainer.style.display = (cartContainer.style.display === "block") ? "none" : "block";
+        }
+    
+        // Fonction pour fermer le panier
+        function closeCart() {
+            const cartContainer = document.getElementById("cartContainer");
+            cartContainer.style.display = "none";
+        }
+    
+        function copySelectedProducts() {
+        let result = "Produits sélectionnés :\n";
+        let total = 0; // Initialisation du total
+
+        // Ajoute chaque produit avec son montant au résultat
+        selectedProducts.forEach(item => {
+            const price = parseFloat(item.product.price);
+            const amount = (price * item.quantity).toFixed(2); // Montant pour ce produit
+            total += price * item.quantity; // Ajoute le montant au total
+            result += `${item.quantity}x - ${item.product.name} - ${amount} €\n`;
+        });
+
+        // Ajouter le total à la fin du texte
+        result += `\nTotal : ${total.toFixed(2)} €`;
+
+        // Créer un textarea temporaire pour permettre la copie
+        const textArea = document.createElement("textarea");
+        textArea.value = result;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        alert("Liste copiée dans le presse-papiers !");
+    }
+    
+        // Exemple de bouton d'ajout de produit (à adapter à vos produits)
         document.addEventListener("DOMContentLoaded", () => {
-            const categories = ["Alcool", "Boissons", "Snack", "Biere", "Formule", "Epicerie", "Yaourt", "Cremerie", "Fruits", "Petit-dejeuner", "Entretien", "Pate", "Plat Préparé"];
+            const categories = ["Alcool", "Boissons", "Snack", "Biere", "Formule", "Yaourt", "Cremerie", "Pate", "Plat Préparé", "gateaux"];
             categories.forEach(category => {
                 const categoryContainer = document.getElementById(category);
                 if (categoryContainer) {
@@ -280,14 +495,32 @@
                             productDiv.innerHTML = `
                                 <img src="${product.img}" alt="${product.alt}">
                                 <h3>${product.name}</h3>
-                                <p>Prix : ${product.price}</p>
+                                <p>Prix : ${product.price} €</p>
+                                <button class="boutton-ajouter">Ajouter au panier</button>
                             `;
                             categoryContainer.appendChild(productDiv);
+    
+                            // Ajouter un événement de clic pour chaque bouton
+                            productDiv.querySelector(".boutton-ajouter").addEventListener("click", () => {
+                                const quantity = 1; // Vous pouvez aussi ajouter un champ pour la quantité
+                                addToList(product, quantity);
+                            });
                         });
                 }
             });
+    
+            // Afficher ou masquer le panier lorsque l'utilisateur clique sur le bouton panier
+            document.getElementById("cartButton").addEventListener("click", toggleCart);
+    
+            // Fermer le panier lorsque l'utilisateur clique sur le bouton "×"
+            document.getElementById("closeCart").addEventListener("click", closeCart);
         });
     </script>
+    
+    
+    
+    
+    
     <script>
         // Charger le fichier JSON
         fetch('status.json')
@@ -298,11 +531,9 @@
                 return response.json();
             })
             .then(data => {
-                // Mettre à jour le texte du statut
                 const stateText = document.getElementById('stateText');
                 stateText.textContent = data.state;
 
-                // Mettre à jour la couleur du voyant
                 const voyant = document.getElementById('voyant');
                 voyant.style.backgroundColor = data.color;
             })
@@ -315,34 +546,41 @@
     const currentHour = new Date().getHours();
     let priceIncrease = 0;
 
-    // Définir la majoration selon l'heure
     if (currentHour >= 21 && currentHour < 23) {
         priceIncrease = 0.2; // 40%
     } else if (currentHour >= 23 || currentHour < 2) {
         priceIncrease = 0.3; // 60%
     }
 
-    // Fonction pour arrondir au multiple de 5 centimes
     function roundToNearestFiveCents(price) {
-        return Math.round(price * 20) / 20; // 20 correspond à 1 / 0.05
+        return Math.round(price * 20) / 20; 
     }
 
-    // Appliquer la majoration et arrondir les prix affichés
     document.querySelectorAll('.product p').forEach(priceTag => {
         const basePrice = parseFloat(priceTag.textContent.match(/[\d\.]+/));
         if (!isNaN(basePrice)) {
             let newPrice = basePrice * (1 + priceIncrease);
-            newPrice = roundToNearestFiveCents(newPrice); // Arrondir au multiple de 5 centimes
+            newPrice = roundToNearestFiveCents(newPrice); 
             priceTag.textContent = `Prix : ${newPrice.toFixed(2)} €`;
         }
     });
 }
 
-// Appeler la fonction après le chargement de la page
 document.addEventListener('DOMContentLoaded', adjustPrices);
 
 
     </script>
+    <!-- Bouton panier flottant -->
+    <button class="cart-button" id="cartButton">
+        🛒
+    </button>
+    <div class="cart-container" id="cartContainer">
+        <span class="close-cart" id="closeCart">×</span>
+        <h3>Mon Panier</h3>
+        <div id="selected-products-list"></div>
+        <p id="totalPrice"></p>
+        <button onclick="copySelectedProducts()">Copier la liste</button>
+    </div>
         <!-- Pied de page -->
         <footer style="background: rgba(0, 0, 0, 0.7); color: white; text-align: center; padding: 20px;">
             <p>En journée : Minimun 25€ .</p>
