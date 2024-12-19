@@ -171,38 +171,30 @@ const products = [
     { img :"img/amorabbq.jpeg", alt: "", name: "", price: "2.65", type: "Pate" },
 
 
-    { img :"img/williamblanquette.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/williamboeufbourgui.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/williamtartiflette.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/williamcolin.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/williamsaurinboeufbourgui.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/williamsaurincassouletcanard.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/williamsaurinpoulet.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/garbitcouscous.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancecassoulet1:2.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancechoucroute1:2.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancepetitsale400g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefranceraviolibolo400g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefranceraviolipurboeuf400g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancesaucisselentille420g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancechiliconcarne.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancecassoulet44.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancechocroute4:4.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancepetitsale800g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefranceraviolipurboeuf800g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancetaviolibolo800g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancepaela.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
-    { img :"img/bellefrancesaucisselentille840g.jpeg", alt: "", name: "", price: "2.65", type: "Plat Préparé" },
     
+        { img: "img/williamblanquette.jpeg", alt: "Blanquette de veau William", name: "Blanquette de veau", price: "2.65", type: "Plat Préparé" },
+        { img: "img/williamboeufbourgui.jpeg", alt: "Bœuf bourguignon William", name: "Bœuf Bourguignon", price: "2.65", type: "Plat Préparé" },
+        { img: "img/williamtartiflette.jpeg", alt: "Tartiflette William", name: "Tartiflette", price: "2.65", type: "Plat Préparé" },
+        { img: "img/williamcolin.jpeg", alt: "Filet de colin William", name: "Filet de Colin", price: "2.65", type: "Plat Préparé" },
+        { img: "img/williamsaurinboeufbourgui.jpeg", alt: "Bœuf bourguignon William Saurin", name: "Bœuf Bourguignon William Saurin", price: "2.65", type: "Plat Préparé" },
+        { img: "img/williamsaurincassouletcanard.jpeg", alt: "Cassoulet au canard William Saurin", name: "Cassoulet au Canard", price: "2.65", type: "Plat Préparé" },
+        { img: "img/williamsaurinpoulet.jpeg", alt: "Poulet rôti William Saurin", name: "Poulet Rôti", price: "2.65", type: "Plat Préparé" },
+        { img: "img/garbitcouscous.jpeg", alt: "Couscous Garbit", name: "Couscous", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancecassoulet1:2.jpeg", alt: "Cassoulet 1/2 Belle France", name: "Cassoulet 1/2", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancechoucroute1:2.jpeg", alt: "Choucroute 1/2 Belle France", name: "Choucroute 1/2", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancepetitsale400g.jpeg", alt: "Petit salé 400g Belle France", name: "Petit Salé", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefranceraviolibolo400g.jpeg", alt: "Ravioli à la bolognaise 400g Belle France", name: "Ravioli Bolognaise", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefranceraviolipurboeuf400g.jpeg", alt: "Ravioli pur bœuf 400g Belle France", name: "Ravioli Pur Bœuf", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancesaucisselentille420g.jpeg", alt: "Saucisses aux lentilles 420g Belle France", name: "Saucisses Lentilles", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancechiliconcarne.jpeg", alt: "Chili con carne Belle France", name: "Chili Con Carne", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancecassoulet44.jpeg", alt: "Cassoulet 4/4 Belle France", name: "Cassoulet 4/4", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancechocroute4:4.jpeg", alt: "Choucroute 4/4 Belle France", name: "Choucroute 4/4", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancepetitsale800g.jpeg", alt: "Petit salé 800g Belle France", name: "Petit Salé 800g", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefranceraviolipurboeuf800g.jpeg", alt: "Ravioli pur bœuf 800g Belle France", name: "Ravioli Pur Bœuf 800g", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancetaviolibolo800g.jpeg", alt: "Ravioli à la bolognaise 800g Belle France", name: "Ravioli Bolognaise 800g", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancepaela.jpeg", alt: "Paella Belle France", name: "Paella", price: "2.65", type: "Plat Préparé" },
+        { img: "img/bellefrancesaucisselentille840g.jpeg", alt: "Saucisses aux lentilles 840g Belle France", name: "Saucisses Lentilles 840g", price: "2.65", type: "Plat Préparé" },
 
-
-
-
-
-
-
-
-   
 
 
     // Formule

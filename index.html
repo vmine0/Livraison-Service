@@ -75,6 +75,7 @@
             z-index: 10;
         }
 
+
         .navbar a {
             color: white;
             text-decoration: none;
@@ -88,6 +89,27 @@
 
         .navbar a:hover {
             background: rgba(255, 255, 255, 0.2);
+        }
+
+        .div-panier{
+            background: linear-gradient(135deg, #2c7d2c, #399839, #7aa87a, #cdf6cd);
+        }
+
+        .div-panier h3 {
+            font-size: 24px;
+            margin: 10px 0;
+            font-family: 'Cormorant Garamond', serif;
+            color: #c7ead6;
+        }
+
+        .quantity-button {
+            background: white;
+            color: rgb(0, 0, 0);
+            border: black;
+            border-radius: 5px;
+            padding: 2px 5px;
+            margin: 0 5px;
+            cursor: pointer;
         }
 
         /* Titre des catégories */
@@ -184,10 +206,12 @@
         margin-top: 20px;
         cursor: pointer;
     }
+
+    
     
 
     /* Style pour la liste du panier */
-    .cart-container {
+    .div-panier {
         position: fixed;
         bottom: 80px;
         right: 20px;
@@ -223,7 +247,7 @@
 
     /* Responsivité pour les petits écrans */
     @media (max-width: 768px) {
-        .cart-container {
+        .div-panier {
             width: 250px;
         }
 
@@ -549,7 +573,7 @@
     if (currentHour >= 21 && currentHour < 23) {
         priceIncrease = 0.2; // 40%
     } else if (currentHour >= 23 || currentHour < 2) {
-        priceIncrease = 0.3; // 60%
+        priceIncrease = 0.2; // 60%
     }
 
     function roundToNearestFiveCents(price) {
@@ -574,7 +598,7 @@ document.addEventListener('DOMContentLoaded', adjustPrices);
     <button class="cart-button" id="cartButton">
         🛒
     </button>
-    <div class="cart-container" id="cartContainer">
+    <div class="div-panier" id="cartContainer">
         <span class="close-cart" id="closeCart">×</span>
         <h3>Mon Panier</h3>
         <div id="selected-products-list"></div>
