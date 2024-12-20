@@ -281,3 +281,23 @@ color: #1E8449;
         font-size: 14px; /* Encore plus petit pour les très petits écrans */
     }
 }
+
+
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchBar {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#searchBar:focus {
+    border-color: #96c196;
+    box-shadow: 0 0 5px #96c196;
+}

@@ -105,7 +105,7 @@ function copySelectedProducts() {
     document.execCommand("copy");
     document.body.removeChild(textArea);
 
-    alert("Liste copiée dans le presse-papiers !");
+    alert("Liste copiée dans le presse-papiers! Vous pouvez maintenant me l'envoyer par sms ainsi que votre adresse pour la livraison");
 }
 
 // Fonction pour ajuster les prix selon l'heure
@@ -166,6 +166,25 @@ document.addEventListener('DOMContentLoaded', () => {
     adjustPrices();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("searchBar");
+
+    searchBar.addEventListener("input", (event) => {
+        const query = event.target.value.toLowerCase(); // Convertir en minuscule pour une recherche insensible à la casse
+        const products = document.querySelectorAll(".product");
+
+        products.forEach(product => {
+            const productName = product.querySelector("h3").textContent.toLowerCase();
+            if (productName.includes(query)) {
+                product.style.display = ""; // Afficher le produit s'il correspond
+            } else {
+                product.style.display = "none"; // Cacher le produit s'il ne correspond pas
+            }
+        });
+    });
+});
+
+
 
 
 fetch('status.json')
@@ -184,3 +203,7 @@ fetch('status.json')
                 .catch(error => {
                     console.error('Erreur lors du chargement du fichier JSON:', error);
                 });
+
+
+
+               
