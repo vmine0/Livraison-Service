@@ -134,7 +134,7 @@ function adjustPrices() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const categories = ["Alcool", "Boissons", "Chips", "Biere", "Formule", "Yaourt", "Cremerie", "Pate", "Plat Préparé", "gateaux"];
+    const categories = ["Alcool", "Boissons", "Chips", "Biere", "Formule", "Yaourt", "Cremerie", "Pate", "Plat Préparé", "gateaux", "Petit-déjeuner"];
 
     categories.forEach(category => {
         const categoryContainer = document.getElementById(category);

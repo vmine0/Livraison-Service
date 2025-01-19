@@ -215,6 +215,38 @@ const products = [
     { img: "img/belinminizaa.jpeg", alt: "Mini-Zaa Belin", name: "Minizza Belin 95g", type: "Chips", price: "1.95" },
     { img: "img/tuc.jpeg", alt: "TUC", name: "TUC Original 100g", type: "Chips", price: "1.50" },
     { img: "img/ancelbretzel.png", alt: "Bretzels Ancel", name: "Bretzels 300g", type: "Chips", price: "3.50" },
+
+    //SURGELE
+
+
+    //HYGIENE 
+
+
+    //PRODUIT MENAGE 
+
+
+    //NOURRITURE POUR ANIMAUX
+
+
+    //PETIT_DEJEUNER 
+    { img: "img/cartenoire.jpeg", alt: "Café moulu Carte Noire", name: "Café Carte Noire", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/ricoré.jpeg", alt: "Ricoré mélange de café et de chicorée", name: "Ricoré", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/vanhoutencacao.jpeg", alt: "Cacao en poudre Van Houten", name: "Cacao Van Houten", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/tassimol'orexpresso.jpeg", alt: "Capsules Tassimo L'Or Espresso", name: "Tassimo L'Or Espresso", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/tetleyenglishbreakfast.jpeg", alt: "Thé Tetley English Breakfast", name: "Thé English Breakfast", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/lipton30s.jpeg", alt: "Thé Lipton Yellow Label 30 sachets", name: "Thé Lipton Yellow Label", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/bellefrancepaingrillé.jpeg", alt: "Pain grillé Belle France", name: "Pain Grillé", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/rogerbiscotte.jpeg", alt: "Biscottes Roger", name: "Biscottes Roger", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/krispolisdorés.jpeg", alt: "Biscottes Krispolls Dorées", name: "Biscottes Krispolls Dorées", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/heudebertlabiscotte.jpeg", alt: "Biscottes Heudebert", name: "Biscottes Heudebert", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/sabarot flocondavoine.jpeg", alt: "Flocons d'avoine Sabarot", name: "Flocons d'Avoine", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/nesquik375g.jpeg", alt: "Cacao en poudre Nesquik 375g", name: "Nesquik 375g", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/chocopic375G.jpeg", alt: "Céréales Chocapic 375g", name: "Chocapic 375g", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/tresorchocolait410g.jpeg", alt: "Céréales Trésor chocolat au lait 410g", name: "Trésor Chocolat au Lait", type: "Petit-déjeuner", price: "2.65" },
+    { img: "img/tresorchoconoisette41Og.jpeg", alt: "Céréales Trésor chocolat noisette 410g", name: "Trésor Chocolat Noisette", type: "Petit-déjeuner", price: "2.65" },
+
+
+    //JUS 
     
 
     // Formule
