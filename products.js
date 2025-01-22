@@ -218,6 +218,24 @@ const products = [
 
     //SURGELE
 
+    { img: "img/bellefrancepaelaroyale.jpeg", alt: "Paëlla royale Belle France", name: "Paëlla Royale", type: "Surgelé", price: "6.50" },
+    { img: "img/bellefrancerizcantonais.jpg", alt: "Riz cantonais Belle France", name: "Riz Cantonais", type: "Surgelé", price: "4.75" },
+    { img: "img/finduscroquettepoisson.jpg", alt: "Croquettes de poisson Findus", name: "Croquettes de Poisson", type: "Surgelé", price: "5.25" },
+    { img: "img/mariecolindalaska.png", alt: "Colin d'Alaska Marie", name: "Colin d'Alaska", type: "Surgelé", price: "6.80" },
+    { img: "img/bellefrancefiletsdecolondalaska.jpg", alt: "Filets de colin d'Alaska Belle France", name: "Filets de Colin d'Alaska", type: "Surgelé", price: "7.20" },
+    { img: "img/bellefrance2coquillesstjacques.jpg", alt: "Coquilles Saint-Jacques Belle France", name: "Coquilles St-Jacques (x2)", type: "Surgelé", price: "5.90" },
+    { img: "img/bellefrance4panierfromagedechevre.jpg", alt: "Panier feuilleté fromage de chèvre Belle France", name: "Panier Fromage de Chèvre (x4)", type: "Surgelé", price: "4.50" },
+    { img: "img/Bellefrance4panierfeuilletesjambon-emmental.jpg", alt: "Panier feuilleté jambon-emmental Belle France", name: "Panier Jambon-Emmental (x4)", type: "Surgelé", price: "4.75" },
+    { img: "img/bellefrance40minifeuilletes.jpg", alt: "Mini feuilletés Belle France (x40)", name: "Mini Feuilletés (x40)", type: "Surgelé", price: "6.30" },
+    { img: "img/bellefrancetarte3fromage.jpg", alt: "Tarte aux 3 fromages Belle France", name: "Tarte 3 Fromages", type: "Surgelé", price: "3.95" },
+    { img: "img/mariequichelorraine.jpg", alt: "Quiche lorraine Marie", name: "Quiche Lorraine", type: "Surgelé", price: "4.20" },
+    { img: "img/MARIE_TARTE_SAUMO.png", alt: "Tarte au saumon Marie", name: "Tarte Saumon", type: "Surgelé", price: "5.50" },
+    { img: "img/MarieLasagne.png", alt: "Lasagnes Marie", name: "Lasagnes", type: "Surgelé", price: "4.80" },
+    { img: "img/original_buns_burger_.jpg", alt: "Buns burger", name: "Buns Burger", type: "Surgelé", price: "3.50" },
+    { img: "img/buns_bolognaise.png", alt: "Buns bolognaise", name: "Buns Bolognaise", type: "Surgelé", price: "3.75" },
+    { img: "img/ristorantepizzathon.webp", alt: "Pizza Thon Ristorante", name: "Pizza Thon", type: "Surgelé", price: "4.95" },
+    { img: "img/ristorante4fromaggi.webp", alt: "Pizza 4 fromages Ristorante", name: "Pizza 4 Fromages", type: "Surgelé", price: "4.95" },
+    { img: "img/ristorantepizzaroyale.webp", alt: "Pizza Royale Ristorante", name: "Pizza Royale", type: "Surgelé", price: "5.10" },
 
     //HYGIENE 
 
